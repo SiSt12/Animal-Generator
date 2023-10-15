@@ -1,10 +1,13 @@
+function border() { 
+  img.style.border = '10px solid rgb(28, 255, 191)';
+  img.style.borderRadius = '20px'; 
+}
 
 function buttonDog() {
     fetch("https://dog.ceo/api/breeds/image/random")
     .then(response => response.json())
     .then(data => img.src = data.message);
-    img.style.border = '10px solid rgb(28, 255, 191)';
-    img.style.borderRadius = '20px';
+    border()
 }
 
 function buttonCat() {
@@ -12,8 +15,7 @@ function buttonCat() {
     fetch('https://api.thecatapi.com/v1/images/search')
     .then(response => response.json())
     .then(data => {img.src = data[0].url;});
-    img.style.border = '10px solid rgb(28, 255, 191)';
-    img.style.borderRadius = '20px';
+    border()
 }
 
 function buttonCapybara() {
@@ -23,7 +25,6 @@ function buttonCapybara() {
       .then(data => {
         const imageUrl = data.data.url;
         img.src = imageUrl;
-        img.style.border = '10px solid rgb(28, 255, 191)';
-        img.style.borderRadius = '20px'; // Adjust this value to control the rounding
+        border()
       });
 }
